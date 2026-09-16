@@ -86,22 +86,28 @@ export class NotebookAppElement extends HTMLElement {
     const contents = nb.toString();
     const title = nb.title;
       
-    if("showSaveFilePicker" in window){
-      const fileHandle = await window.showSaveFilePicker({
-        suggestedName: `${nb.title}${nb.title.includes('.ipynb') ? '' : '.ipynb'}`
-      });
-      const writable = await fileHandle.createWritable();
-      await writable.write(contents);
-      await writable.close();
-    }else{
-      const anchor = document.createElement('a');
-      const url = URL.createObjectURL(new Blob([contents]));
-      document.body.appendChild(anchor);
-      anchor.href = url;
-      anchor.download = `${nb.title}${nb.title.includes('.ipynb') ? "" : ".ipynb"}`;
-      anchor.click();
-      anchor.remove();
-      URL.revokeObjectURL(url);
+    try{
+      if("showSaveFilePicker" in window){
+        const fileHandle = await window.showSaveFilePicker({
+          suggestedName: `${nb.title}${nb.title.includes('.ipynb') ? '' : '.ipynb'}`
+        });
+        const writable = await fileHandle.createWritable();
+        await writable.write(contents);
+        await writable.close();
+      }else{
+        const anchor = document.createElement('a');
+        const url = URL.createObjectURL(new Blob([contents]));
+        document.body.appendChild(anchor);
+        anchor.href = url;
+        anchor.download = `${nb.title}${nb.title.includes('.ipynb') ? "" : ".ipynb"}`;
+        anchor.click();
+        anchor.remove();
+        URL.revokeObjectURL(url);
+      }
+    }catch(error){
+      alert(`Error saving ${nb.title} to file. ${error}`);
+    }finally{
+      alert(`Success! ${nb.title} saved to file.`);
     }
   }
 
@@ -113,7 +119,7 @@ export class NotebookAppElement extends HTMLElement {
     const nb = this.qs('notebook-el') as NotebookElement;
     const response = await fetch(url, {method: "POST", body: nb.toString()});
     if(response.ok){
-      alert(`${nb.title} successfully sent to ${url}`);
+      alert(`Success! ${nb.title} sent to ${url}`);
     }else{
       alert(`Error sending ${nb.title} to ${url}. ${response.status}: ${response.statusText}`);
     }
@@ -146,7 +152,7 @@ export class NotebookAppElement extends HTMLElement {
 
       transaction.oncomplete = () => {
         db.close();
-        alert(`Notebook ${notebook.title} successfully written to browser's indexedDB.`);
+        alert(`Success! ${notebook.title} written to IndexedDb.`);
       };
     };
 
@@ -220,7 +226,7 @@ export class NotebookAppElement extends HTMLElement {
   onOpenFromBrowserClick(): void {
     const notebook = this.qs('notebook-el') as NotebookElement;
     let previous = localStorage.getItem('notebook.lastTitle') ?? '';
-    const title = prompt("title", previous);
+    const title = prompt("Title", previous);
     if(!title) return;
     localStorage.setItem('notebook.lastTitle', title);
     

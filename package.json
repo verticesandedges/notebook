@@ -18,7 +18,7 @@
     "watch": "parcel watch --dist-dir docs/",
     "gh-pages": "parcel build --dist-dir docs/ --public-url /notebook/",
     "start": "parcel src/index.html --dist-dir docs/ --port 8080 --public-url /notebook/",
-    "serve": "http-server docs/ --public-url /notebook/"
+    "serve": "http-server docs/"
   },
   "serviceWorker": "docs/sw.js",
   "source": "src/index.html",
