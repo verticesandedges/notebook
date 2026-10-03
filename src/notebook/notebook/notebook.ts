@@ -18,6 +18,7 @@ export class NotebookElement extends HTMLElement {
     val = val?.replace('\n', '')
     if(val === "") val = undefined;
     this.qs('h1')!.innerText = val ?? "Untitled Notebook";
+    document.title = this.qs('h1').innerText;
   }
   //#endregion
 
