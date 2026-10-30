@@ -109,13 +109,16 @@ export class CellActionsElement extends HTMLElement {
 
   private onRunClick(): void {
     const parentCell = this.getParent();
+    const runBtn = this.qs('.run-cell');
 
     if(this.isRunnable(parentCell)){
-      (parentCell as Runnable).run();      
+      (parentCell as Runnable).run();   
     }
 
     if(this.isRenderable(parentCell)){
       (parentCell as Renderable).render();
+      if(runBtn.innerText === 'Render') runBtn.innerText = 'Edit';
+      else if(runBtn.innerText === 'Edit') runBtn.innerText = 'Render';
     }
   }
   //#endregion
