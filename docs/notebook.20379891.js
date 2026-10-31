@@ -973,8 +973,8 @@ class MarkdownCellElement extends HTMLElement {
             output.style.display = 'block';
         } else {
             // Return to Editor
-            output.style.display = 'none';
             input.style.display = 'block';
+            output.style.display = 'none';
             this.view.focus();
         }
     }
@@ -67884,8 +67884,8 @@ class CellActionsElement extends HTMLElement {
         if (this.isRunnable(parentCell)) parentCell.run();
         if (this.isRenderable(parentCell)) {
             parentCell.render();
-            if (runBtn.innerText === 'Render') runBtn.innerText = 'Edit';
-            else if (runBtn.innerText === 'Edit') runBtn.innerText = 'Render';
+            if (parentCell.isRendered) runBtn.innerText = 'Edit';
+            else runBtn.innerText = 'Render';
         }
     }
 }

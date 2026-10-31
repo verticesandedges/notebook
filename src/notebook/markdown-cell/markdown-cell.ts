@@ -5,6 +5,7 @@ import { markdown } from '@codemirror/lang-markdown';
 import { indentWithTab } from '@codemirror/commands';
 import { marked } from 'marked';
 import katex from 'katex';
+import { CellActionsElement } from '../cell-actions/cell-actions.ts';
 
 let tabSize = new Compartment();
 
@@ -129,8 +130,8 @@ export class MarkdownCellElement extends HTMLElement {
       output.style.display = 'block';
     } else {
       // Return to Editor
-      output.style.display = 'none';
       input.style.display = 'block';
+      output.style.display = 'none';
       this.view.focus();
     }
   }
