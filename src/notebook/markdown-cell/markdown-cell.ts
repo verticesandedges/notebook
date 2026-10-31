@@ -96,7 +96,11 @@ export class MarkdownCellElement extends HTMLElement {
 
     const input = this.qs('.cell-editor');
     const output = this.qs('.cell-output');
-
+    const runBtn = this.shadowRoot
+        ?.querySelector('cell-actions')
+        ?.shadowRoot
+        ?.querySelector('.run-cell') as HTMLButtonElement;
+      
     if (this.isRendered) {
       // 1. Convert Markdown to HTML
       const html = marked.parse(this.source) as string;
@@ -128,10 +132,13 @@ export class MarkdownCellElement extends HTMLElement {
       // 3. Swap UI visibility
       input.style.display = 'none';
       output.style.display = 'block';
+      // this runBtn belongs to the cell-actions element
+      if(runBtn) runBtn.innerText = 'Edit';
     } else {
       // Return to Editor
       input.style.display = 'block';
       output.style.display = 'none';
+      if(runBtn) runBtn.innerText = 'Render';
       this.view.focus();
     }
   }

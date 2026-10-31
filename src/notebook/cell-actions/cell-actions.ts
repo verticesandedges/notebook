@@ -117,11 +117,6 @@ export class CellActionsElement extends HTMLElement {
 
     if(this.isRenderable(parentCell)){
       (parentCell as Renderable).render();
-      if((parentCell as MarkdownCellElement).isRendered){
-        runBtn.innerText = 'Edit';
-      }else{
-        runBtn.innerText = 'Render';
-      }
     }
   }
   //#endregion
