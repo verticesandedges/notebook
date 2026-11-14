@@ -18,10 +18,9 @@ export class NotebookAppElement extends HTMLElement {
 
       this.openURLParams();
       this.openLaunchFile();
-    
+
       resolve(true);
     });
-    
   }
 
   setupUI(){
@@ -32,6 +31,9 @@ export class NotebookAppElement extends HTMLElement {
     this.qs('.open-file').addEventListener('click', () => this.onOpenFromFileClick());
     this.qs('.open-url').addEventListener('click', () => this.onOpenFromURLClick());
     this.qs('.open-browser').addEventListener('click', () => this.onOpenFromBrowserClick());
+
+    const links = this.qsa('a[data-href]') as NodeListOf<HTMLAnchorElement>;
+    links.forEach(link => link.href = link.dataset.href ?? './');
   }
 
   async fetchStyle(): Promise<void> {
