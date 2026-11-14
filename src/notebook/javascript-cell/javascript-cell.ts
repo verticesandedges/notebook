@@ -349,4 +349,8 @@ export class JavascriptCellElement extends HTMLElement {
     (pkg.indicator as HTMLOutputElement).value = '';
   }
   //#endregion
+
+  focus(){
+    this.qs('.cell-editor')!.focus();
+  }
 }

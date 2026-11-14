@@ -220,4 +220,8 @@ export class MarkdownCellElement extends HTMLElement {
     });
   }
   //#endregion
+
+  focus(){
+    this.qs('.cell-editor')!.focus();
+  }
 }

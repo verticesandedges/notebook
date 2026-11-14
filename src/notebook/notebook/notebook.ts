@@ -108,6 +108,7 @@ export class NotebookElement extends HTMLElement {
     cells.innerHTML = '';
     const jsCell = document.createElement('javascript-cell');
     cells.appendChild(jsCell);
+    jsCell.focus()
   }
 
   fromJSON(obj: any, clearFirst: boolean=false): void {
