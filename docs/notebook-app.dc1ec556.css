@@ -41,7 +41,7 @@ button {
   padding: 0;
 }
 
-.about {
+.about, .new {
   color: #000;
   text-decoration: none;
 }
