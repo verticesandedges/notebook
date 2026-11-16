@@ -11,8 +11,10 @@
 
     margin: 50px transparent;
     
-    max-width: 80ch;
-    margin-left: auto;
+    min-width: 100ch;
+    /*max-width: 80ch;
+    */
+    display: auto;
     margin-right: auto;
     display: flex;
     flex-direction: column;
@@ -24,7 +26,24 @@
     padding-right: 25px;
     padding-bottom: 25px;
     border: 1px solid black;
-    border-left: none;
+  }
+}
+
+article.notebook {
+  --spiral-width: 50px;
+  background: url('./spiral-small.png') left top repeat-y;
+  background-size: var(--spiral-width);
+  padding-left: var(--spiral-width);
+  border-right: 1px solid black;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  .cover {
+    position: absolute;
+    background-color: black;
+    height: 1px;
+    left: 19px;
+    width: 97ch;
   }
 }
 
@@ -55,22 +74,6 @@ button {
   color: var(--ui-color);
   background-color: var(--bg-color);
   font-size: var(--font-size);
-}
-
-.cover {
-  width: 28px;
-  height: 0px;
-  border: 1px solid white;
-  position: relative;
-  left: -92px;
-}
-
-.cover.top {
-  top: -1px;
-}
-
-.cover.bottom {
-  bottom: -26px;
 }
 
 notebook-actions:first-of-type {
