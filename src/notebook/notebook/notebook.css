@@ -26,10 +26,8 @@ article.notebook {
   padding-left: var(--spiral-width);
   padding-bottom: 15px;
   border-right: 1px solid black;
-  overflow-y: auto;
-  border-top: 1px dotted black;
-  border-bottom: 1px dotted black;
-  border-right: 1px dotted black;
+  padding-top: 10px;
+  padding-bottom: 10px;
 
   .cells {
     background-color: white;
