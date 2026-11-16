@@ -5,7 +5,7 @@ import { markdown } from '@codemirror/lang-markdown';
 import { indentWithTab } from '@codemirror/commands';
 import { marked } from 'marked';
 import katex from 'katex';
-import { CellActionsElement } from '../cell-actions/cell-actions.ts';
+import { CellActionsElement } from '../cell-actions/cell-actions';
 
 let tabSize = new Compartment();
 

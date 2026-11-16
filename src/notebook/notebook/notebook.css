@@ -2,9 +2,6 @@
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-:host {
-}
-
 @media screen and (min-width: 800px){
   :host {  
     --font-size: 20px;
@@ -19,13 +16,6 @@
     display: flex;
     flex-direction: column;
 
-    --spiral-width: 75px;
-    background: url('./spiral-small.png') left top repeat-y;
-    background-size: var(--spiral-width);
-    padding-left: calc(var(--spiral-width) + 15px);
-    padding-right: 25px;
-    padding-bottom: 25px;
-    border: 1px solid black;
   }
 }
 
@@ -34,15 +24,19 @@ article.notebook {
   background: url('./spiral-small.png') left top repeat-y;
   background-size: var(--spiral-width);
   padding-left: var(--spiral-width);
+  padding-bottom: 15px;
   border-right: 1px solid black;
+  overflow-y: auto;
+  border-top: 1px dotted black;
+  border-bottom: 1px dotted black;
+  border-right: 1px dotted black;
 
-  .cover {
-    position: absolute;
-    background-color: black;
-    height: 1px;
-    left: 19px;
-    width: 97ch;
+  .cells {
+    background-color: white;
+    padding-right: 15px;
   }
+
+  background-color: white;
 }
 
 h1 {
@@ -86,4 +80,9 @@ hr {
   border: none;
   height: 1px;
   border-bottom: 1px solid gray;
+}
+
+.cells {
+  overflow-y: scroll;
+  max-height: calc(100vh - 300px);
 }

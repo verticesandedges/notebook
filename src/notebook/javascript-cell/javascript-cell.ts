@@ -3,9 +3,9 @@ import { EditorState, Compartment } from "@codemirror/state";
 import { keymap } from "@codemirror/view";
 import { javascript } from "@codemirror/lang-javascript";
 import { indentWithTab } from "@codemirror/commands";
-import "../cell-type-selector/cell-type-selector.ts";
-import "../cell-actions/cell-actions.ts";
-import type { NotebookElement } from "../notebook/notebook.ts";
+import "../cell-type-selector/cell-type-selector";
+import "../cell-actions/cell-actions";
+import type { NotebookElement } from "../notebook/notebook";
 
 let language = new Compartment();
 let tabSize = new Compartment();

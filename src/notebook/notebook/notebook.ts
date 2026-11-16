@@ -1,7 +1,7 @@
-import { JavascriptCellElement } from "../javascript-cell/javascript-cell.ts";
-import { MarkdownCellElement } from "../markdown-cell/markdown-cell.ts";
-import { TypescriptCellElement } from "../typescript-cell/typescript-cell.ts";
-import "../notebook-actions/notebook-actions.ts";
+import { JavascriptCellElement } from "../javascript-cell/javascript-cell";
+import { MarkdownCellElement } from "../markdown-cell/markdown-cell";
+import { TypescriptCellElement } from "../typescript-cell/typescript-cell";
+import "../notebook-actions/notebook-actions";
 
 export class NotebookElement extends HTMLElement {
   //#region public properties
