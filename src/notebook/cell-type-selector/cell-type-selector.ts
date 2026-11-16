@@ -71,9 +71,13 @@ export class CellTypeSelector extends HTMLElement {
     js.addEventListener('click', this.onJavascriptClick.bind(this));
     ts.addEventListener('click', this.onTypescriptClick.bind(this));
 
-    this.qs('.label.markdown').addEventListener('click', this.onMarkdownClick.bind(this));
-    this.qs('.label.javascript').addEventListener('click', this.onJavascriptClick.bind(this));
-    this.qs('.label.typescript').addEventListener('click', this.onTypescriptClick.bind(this));
+    // this.qs('.label.markdown').addEventListener('click', this.onMarkdownClick.bind(this));
+    // this.qs('.label.javascript').addEventListener('click', this.onJavascriptClick.bind(this));
+    // this.qs('.label.typescript').addEventListener('click', this.onTypescriptClick.bind(this));
+
+    this.qs('.label.markdown').addEventListener('click', md.click.bind(md));
+    this.qs('.label.javascript').addEventListener('click', js.click.bind(js));
+    this.qs('.label.typescript').addEventListener('click', ts.click.bind(ts));
 
     switch(this.dataset.selected){
       case 'markdown':
