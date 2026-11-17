@@ -27,6 +27,13 @@ fieldset.cell-outputs {
   border: none;
 }
 
+.log {
+  font-size: 12px;
+  margin-left: 10px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
 fieldset {
   padding: 0;
   border: 0;
