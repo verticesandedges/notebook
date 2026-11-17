@@ -5,8 +5,9 @@
 :host {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  justify-content: flex-start;
   gap: 15px;
-  justify-content: flex-end;
   outline: none;
   border: none;
 }
@@ -24,14 +25,4 @@ label {
   div {
     display: none;
   }
-  
-  /*
-  input {
-    display: none;
-  }
-
-  div:has(input[type=radio]:checked) {
-    display: inline-block;
-  }
-  */
 }

@@ -17,7 +17,8 @@
     "build":        "parcel build --dist-dir docs/",
     "build:github": "parcel build --dist-dir docs/ --public-url /notebook/ && git add . && git commit -m \"Rebuild $(date '+%Y-%m-%d %H:%M:%S')\"",
     "watch":        "parcel watch --dist-dir docs/",
-    "start":        "http-server -c-1 docs/"
+    "start":        "http-server -c-1 docs/",
+    "push:github": "git push github main"
   },
   "serviceWorker": "docs/sw.js",
   "source": "src/index.html",

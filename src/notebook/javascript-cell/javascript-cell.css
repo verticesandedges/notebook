@@ -1,3 +1,11 @@
+:root {
+  font-size: 12px;
+}
+
+.cm-editor {
+  font-size: 12px;
+}
+
 fieldset.cell-editor {
   outline: none;
   border: none;
@@ -30,17 +38,14 @@ fieldset {
   flex-direction: row;
   justify-content: space-between;
   align-items: end;
+  margin-bottom: 5px;
 }
 
 cell-type { 
-  margin-top: 5px;
-  margin-bottom: 5px;
   padding-top: 0;
 }
 
 cell-actions {
-  margin-top: 5px;
-  margin-bottom: 5px;
 }
 
 hr {

@@ -49,3 +49,9 @@ button {
   text-decoration: none;
   color: black;
 }
+
+notebook-el {
+  display: block;
+  margin: 0 auto;
+  max-width: 75vw;
+}

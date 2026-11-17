@@ -2,6 +2,7 @@
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
+<<<<<<< HEAD
 @media screen and (min-width: 800px){
   :host {  
     --font-size: 20px;
@@ -17,15 +18,28 @@
   }
 }
 
+=======
+>>>>>>> 1bd6ab7
 article.notebook {
+  /* Spiral notebook styling */
   --spiral-width: 50px;
   background: url('./spiral-small.png') left top repeat-y;
   background-size: var(--spiral-width);
   padding-left: var(--spiral-width);
   padding-bottom: 15px;
+<<<<<<< HEAD
   border-right: 1px solid black;
   padding-top: 10px;
   padding-bottom: 10px;
+=======
+
+  overflow-y: auto;
+
+  /* Dotted borders */
+  border-top: 1px dotted black;
+  border-bottom: 1px dotted black;
+  border-right: 1px dotted black;
+>>>>>>> 1bd6ab7
 
   .cells {
     background-color: white;
