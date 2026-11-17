@@ -14,11 +14,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf .parcel-cache docs build",
-    "build": "parcel build --dist-dir docs/ --public-url /notebook/",
-    "watch": "parcel watch --dist-dir docs/",
-    "gh-pages": "parcel build --dist-dir docs/ --public-url /notebook/",
-    "start": "parcel src/index.html --dist-dir docs/ --port 8080 --public-url /notebook/",
-    "serve": "http-server docs/"
+    "build":        "parcel build --dist-dir docs/",
+    "build:github": "parcel build --dist-dir docs/ --public-url /notebook/ && git add . && git commit -m \"Rebuild $(date '+%Y-%m-%d %H:%M:%S')\"",
+    "start": "http-server -c-1 docs/",
+    "push:github": "git push github main"
   },
   "serviceWorker": "docs/sw.js",
   "source": "src/index.html",

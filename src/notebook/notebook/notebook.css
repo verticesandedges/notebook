@@ -2,31 +2,17 @@
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-@media screen and (min-width: 800px){
-  :host {  
-    --font-size: 20px;
-
-    margin: 50px transparent;
-    
-    min-width: 100ch;
-    /*max-width: 80ch;
-    */
-    display: auto;
-    margin-right: auto;
-    display: flex;
-    flex-direction: column;
-
-  }
-}
-
 article.notebook {
+  /* Spiral notebook styling */
   --spiral-width: 50px;
   background: url('./spiral-small.png') left top repeat-y;
   background-size: var(--spiral-width);
   padding-left: var(--spiral-width);
   padding-bottom: 15px;
-  border-right: 1px solid black;
+
   overflow-y: auto;
+
+  /* Dotted borders */
   border-top: 1px dotted black;
   border-bottom: 1px dotted black;
   border-right: 1px dotted black;
