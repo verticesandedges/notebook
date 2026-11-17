@@ -12,9 +12,6 @@ fieldset.cell-editor {
 }
 
 .cell-outputs {
-  display: block;
-  width: content;
-  height: content;
   overflow-wrap: anywhere;
 }
 
@@ -25,6 +22,13 @@ fieldset.cell-editor {
 fieldset.cell-outputs {
   outline: none;
   border: none;
+}
+
+.log {
+  font-size: 12px;
+  margin-left: 10px;
+  margin-top: 3px;
+  margin-bottom: 3px;
 }
 
 fieldset {
@@ -41,12 +45,6 @@ fieldset {
   margin-bottom: 5px;
 }
 
-cell-type { 
-  padding-top: 0;
-}
-
-cell-actions {
-}
 
 hr {
   border: none;
