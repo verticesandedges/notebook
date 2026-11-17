@@ -1,9 +1,9 @@
 :root {
-  font-size: 12px;
+  --font-size: 12px;
 }
 
 .cm-editor {
-  font-size: 12px;
+  font-size: var(--font-size);
 }
 
 fieldset.cell-editor {
@@ -11,7 +11,7 @@ fieldset.cell-editor {
   border: none;
 }
 
-.cell-outputs {
+fieldset.cell-outputs {
   overflow-wrap: anywhere;
 }
 
@@ -25,7 +25,7 @@ fieldset.cell-outputs {
 }
 
 .log {
-  font-size: 12px;
+  font-size: var(--font-size);
   margin-left: 10px;
   margin-top: 3px;
   margin-bottom: 3px;

@@ -1,25 +1,17 @@
 :root { 
-  font-size: 12px;
+  --font-size: 12px;
 }
 
 .cm-editor {
-  font-size: 12px;
+  font-size: var(--font-size);
 }
 
 :host {
-  --font-size: 12px;
+  font-size: var(--font-size);
   --cell-border: 1px solid black;
   --ui-color: 0x000000;
   --bg-color: 0xffffff;
 }
-
-/*
-section.cell.markdown-cell {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-*/
 
 fieldset.cell-outputs {
   outline: none;
@@ -27,7 +19,7 @@ fieldset.cell-outputs {
 }
 
 .cell-output {
-  font-size: 12px;
+  font-size: var(--font-size);
   margin-left: 10px;
   margin-top: 3px;
   margin-bottom: 3px;
@@ -51,14 +43,14 @@ cell-type {
   padding-top: 0;
 }
 
-cell-actions {
-}
-
-
 hr {
   border: none;
   height: 0px;
   border-bottom: 1px dotted gray;
+}
+
+.cell-output:empty {
+  display: none;
 }
 
 
